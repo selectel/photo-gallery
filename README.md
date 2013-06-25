@@ -1,7 +1,7 @@
 # [Selectel][] [storage][] photo gallery [![Build Status][travis-img]][travis]
 
 [travis]: http://travis-ci.org/selectel/photo-gallery
-[travis-img]: https://secure.travis-ci.org/selectel/photo-gallery
+[travis-img]: https://travis-ci.org/selectel/photo-gallery.png
 
 Features:
 
