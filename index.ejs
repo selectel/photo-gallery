@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Selectel Photo Gallery</title>
+  <meta name="description" content="">
+  <meta content="NOINDEX, NOFOLLOW" name="robots">
+  <meta name="author" content="Andrew Vlasov">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+</head>
+<body>
+  <style type="text/css"><%- fs.readFileSync('./style.min.css') %></style>
+  <div class="header">
+    <a href="#" class="logo"></a>
+    <div class="count"></div>
+  </div>
+  <div class="wrapper">
+    <div class="content">
+      <div class="photo-list">
+      </div>
+      <div id="lazy">more..!</div>
+    </div>
+  </div>
+  <div class="light-box">
+    <div class="light-box-image">
+    </div>
+
+    <a href="#" class="btn-fullscreen icon-fullscreen"></a>
+
+    <div class="light-box-footer">
+      <a href="#" class="btn-prev">
+        <span class="icon-left"></span>
+      </a>
+      <a href="#" class="btn-play">
+        <span class="icon-play"></span>
+      </a>
+      <a href="#" class="btn-next">
+        <span class="icon-right"></span>
+      </a>
+      <a href="#" class="btn-share">
+        <span class="icon-share"></span>
+      </a>
+      <a href="#" class="btn-close">
+        <span class="icon-close"></span>
+      </a>
+    </div>
+  </div>
+  <div class="share">
+    <a class="dl" href="#" rel="nofollow"><span class="icon-download" title="Посмотреть оригинал"></span></a>
+    <a class="mail" href="#" rel="nofollow"><span class="icon-email" title="Отправить по email"></span></a>
+    <a class="tw" href="#" rel="nofollow"><span class="icon-twitter" title="Поделиться в twitter"></span></a>
+    <a class="vk" href="#" rel="nofollow"><span class="icon-vk" title="Поделиться в Вконтакте"></span></a>
+    <a class="gp" href="#" rel="nofollow"><span class="icon-gplus" title="Поделиться в Google+"></span></a>
+  </div>
+  <!-- end .wrapper-->
+</body>
+  <script><%- fs.readFileSync('./js/gallery.min.js') %></script>
+</html>

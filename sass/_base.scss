@@ -1,0 +1,83 @@
+/* ===== Import ====================================================== */
+@import "compass/support";
+@import "compass/css3.scss";
+@import "compass/css3/background-size";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
+@import "compass/css3/opacity";
+@import "compass/css3/text-shadow";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import "compass/utilities";
+@import "compass/utilities/tables";
+@import "compass/utilities/tables/borders";
+@import "utilities/retina-sprites"; // import this once for all sprites
+
+@import "icon/*.png";
+@import "icon-retina/*.png";
+
+$sprites: sprite-map("icon/*.png", $spacing: 2px);              // import 1x sprites from icons folder 
+$sprites2x: sprite-map("icon-retina/*.png", $spacing: 4px);     // import 2x sprites from retina folder
+
+// @import "social/*.png";
+// @import "social-retina/*.png";
+
+// $sprite2s: sprite-map("social/*.png", $spacing: 2px);              // import 1x sprites from icons folder 
+// $sprite2s2x: sprite-map("social-retina/*.png", $spacing: 4px);     // import 2x sprites from retina folder
+
+.icon-play {
+    @include retina-sprite(play);
+}
+.icon-pause {
+    @include retina-sprite(pause);
+}
+.icon-left {
+    @include retina-sprite(left);
+}
+.icon-right {
+    @include retina-sprite(right);
+}
+.icon-share {
+    @include retina-sprite(share);
+}
+.icon-close {
+    @include retina-sprite(close);
+}
+.icon-fullscreen {
+    @include retina-sprite(fullscreen);
+}
+
+
+.icon-twitter {
+    @include retina-sprite(twitter);
+}
+.icon-vk {
+    @include retina-sprite(vk);
+}
+.icon-email {
+    @include retina-sprite(email);
+}
+.icon-gplus {
+    @include retina-sprite(gplus);
+}
+.icon-download {
+    @include retina-sprite(download);
+}
+
+$text        :#555;
+$bg          :#141414;
+
+
+
+/* ===== MIXINS ========================================================
+   Author: Andrew Vlasov
+   ========================================================================== */
+@mixin transparent($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  background-color: transparent;
+  background-color: $rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+  zoom: 1;
+}

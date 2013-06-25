@@ -1,0 +1,9 @@
+{ "dependencies" :
+  { "sqwish" : ""
+  , "coffee-script" : ""
+  , "uglify-js" : ""
+  , "ejs" : ""
+  },
+  "name": "photo-gallery",
+  "version": "1.0.0"
+}
