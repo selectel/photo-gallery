@@ -12,7 +12,7 @@ Features:
 - unintrusive panel
 - sharing
 - folders
-- optinal thumbs ('./.thumbs')
+- optional thumbs ('./.thumbs')
 - responsive & adaptive
 
 ## Build
