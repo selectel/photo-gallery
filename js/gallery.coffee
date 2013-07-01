@@ -69,15 +69,12 @@ gCollectionView = Backbone.View.extend
       for i in [0..(Math.floor($(window).height()/312))]
         @needMore()
       $('.count').html(@collection.length + ' элементов')
-      # if $('#lazy').is(':appeared') then @needMore()
       Backbone.history.start()
   find: (query) ->
     @collection.findWhere(query)
 
   getNext: (model) ->
     model = @collection.at(@collection.indexOf(model) + 1) || @collection.find((model) -> model.attributes.name)
-    # if !model.get('loaded') 
-      # @needMore()
     return model
 
   getPrev: (model) ->
