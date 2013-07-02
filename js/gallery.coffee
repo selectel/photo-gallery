@@ -68,7 +68,12 @@ gCollectionView = Backbone.View.extend
       $('#lazy').show()
       for i in [0..(Math.floor($(window).height()/312))]
         @needMore()
-      $('.count').html(@collection.length + ' элементов')
+      lastDigit = @collection.length%10;
+      twoLastDigits = @collection.length%100;
+      $('.count').html(@collection.length + ' элемент' + (
+          if twoLastDigits isnt 11 and lastDigit is 1 then '' else
+            if twoLastDigits not in [12,13,14] and lastDigit in [2,3,4] then 'а' else 'ов'
+        ))
       Backbone.history.start()
   find: (query) ->
     @collection.findWhere(query)
@@ -79,7 +84,7 @@ gCollectionView = Backbone.View.extend
 
   getPrev: (model) ->
     prevModel = @collection.at(@collection.indexOf(model) - 1)
-    return if !prevModel.attributes.name then @collection.at(@collection.length - 1) else prevModel
+    return if (!prevModel or !prevModel.get('name')) then @collection.at(@collection.length - 1) else prevModel
 
   renderOne: (model) ->
     view = if model.attributes.subdir then new FldView(model: model) else new ImgView(model: model)
@@ -109,15 +114,19 @@ lightBox = new (Backbone.View.extend(
     'click .btn-share': 'shareToggle'
 
   shareToggle: (forceVisible = true) ->
+    $btnShare = $('.btn-share');
     $el = $('.share')
     if !forceVisible
+      $btnShare.removeClass('active')
       $el.hide()
       return !@sharing = false
       
+    $btnShare.toggleClass('active')
     $el.toggle();
     if !@sharing != @sharing
       url = encodeURI(document.location.origin + document.location.pathname.split('/').slice(0,-1).join('/') + '/' + @model.attributes.name)
       $('.dl').attr(href: @model.attributes.name)
+      $('.fb').attr(href: 'http://share.yandex.ru/go.xml?service=facebook&url=' + url + '&title=Selectel Photo Gallery / ' + @model.attributes.name)
       $('.tw').attr(href: 'http://share.yandex.ru/go.xml?service=twitter&url=' + url + '&title=Selectel Photo Gallery / ' + @model.attributes.name)
       $('.gp').attr(href: 'http://share.yandex.ru/go.xml?service=gplus&url=' + url + '&title=Selectel Photo Gallery / ' + @model.attributes.name)
       $('.mail').attr(href: 'mailto:?subject=' + @model.attributes.name + '&body=' + url + '&title=Selectel Photo Gallery / ' + @model.attributes.name)
@@ -174,7 +183,8 @@ lightBox = new (Backbone.View.extend(
     if @visible
       return false
     @visible = true
-    @bodyScroll = $('body').scrollTop()
+    @bodyScroll = $('body').scrollTop() || $('html').scrollTop()
+    console.log 'wow: ', @bodyScroll
     $('.wrapper').hide()
     return false
 
@@ -187,7 +197,7 @@ lightBox = new (Backbone.View.extend(
     @shareToggle(false);
     (=>
       setTimeout => 
-        $('body').scrollTop(@bodyScroll)
+        $('body,html').scrollTop(@bodyScroll)
       , 0
     )()
     return false
