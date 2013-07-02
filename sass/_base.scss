@@ -64,6 +64,9 @@ $sprites2x: sprite-map("icon-retina/*.png", $spacing: 4px);     // import 2x spr
 .icon-download {
     @include retina-sprite(download);
 }
+.icon-facebook {
+    @include retina-sprite(facebook);
+}
 
 $text        :#555;
 $bg          :#141414;
