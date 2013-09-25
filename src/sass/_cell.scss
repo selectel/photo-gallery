@@ -1,0 +1,231 @@
+/* ===== ROW, FLOW, DIV-TABLES STYLES ========================================================
+   Author: Andrew Vlasov
+   ========================================================================== */
+
+/* ===== Responsive cell ======= */
+.row {
+    display: table;
+    margin-left: -2em;
+    width: 100%;
+
+    .cell5, .cell4, .cell3, .cell2 {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    & > * {
+        display: table-cell;
+        padding-left: 2em;
+    }
+
+    .cell2 { width: 50%; }
+
+    .cell3 { width: 33%; }
+
+    .cell4 { width: 25%; }
+
+    .cell5 { width: 20%; }
+
+    &:before, &:after {
+        content: none;
+    }
+}
+
+.flow {
+    margin-left: -3%;
+    & > * {
+        float: left;
+        margin-left: 3%;
+    }
+
+    .cell2 { width: 47%; }
+
+    .cell3 { width: 30%; }
+
+    .cell4 { width: 22%; }
+
+    .cell5 { width: 17%; }
+
+    &:before, &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+/* ===== Table-style header ======= */
+.heading {
+    //border: 1px solid transparent;
+    color: #888;
+    display: table;
+    margin: 0;
+    width: 100%;
+    vertical-align: top;
+
+    & > * {
+        display: table-cell;
+        line-height: 1;
+        padding: .4em .5em;
+        vertical-align: middle;
+    }
+    
+    .toggle {
+        width: 9em;
+        text-align: center;
+
+        a {
+            border-bottom: 1px dotted;
+            color: #777;
+            font-weight: normal;
+            text-decoration: none;
+        }
+    }
+}
+/* ===== Table-style rows ======= */
+.row-table {
+    //border: 1px solid transparent;
+    display: table;
+    margin: 0;
+    width: 100%;
+
+    & > * {
+        display: table-cell;
+        padding: 1em .5em;
+        vertical-align: middle;
+    }
+    &.error {
+        background: #F8DDDD;
+
+        &:hover { background: #F8DDDD !important; }
+    }
+    &.row-add {
+        background: transparent;
+        text-align: center;
+        
+        &:hover { background: transparent !important; }
+    }
+}
+.div-table {
+    margin-bottom: 1em;
+
+    &.striped {
+        .row-table:nth-child(even) {
+            background: #FFF;
+        }
+    }
+
+    &.border-row {
+        .row-table {
+            border-top: 1px solid $border;
+        }
+        .row-table:last-child {
+            border-bottom: 1px solid $border;
+        }
+    }
+
+    &.rounded {
+        border: 1px solid $border;
+        border-radius: 4px;
+        overflow: hidden;
+        .row-table:last-child {
+            border-bottom: 0;
+        }
+        &.border-row .row-table:first-child {
+            border-top: 0;
+        }
+    }
+    &.condensed {
+        .row-table {
+            & > * {
+                padding: .5em;
+            }
+        }
+    }
+
+    &.hover {
+        .row-table:hover { background: #F5F5F5; }
+    }
+
+    .hidden-label {
+        display: none;
+    }
+
+    .thead {
+        background: #EEE;
+        color: #888;
+        padding: .5em;
+        text-shadow: 0 1px rgba(#FFF, .7);
+
+        h3 { margin: 0; }
+    }
+
+    input[type="text"], select { margin: 0; }
+}
+
+/* ===== Responsive Styles / Landscape phone to portrait tablet ========================================================
+   Author: Andrew Vlasov
+   ========================================================================== */
+@media (max-width: 768px) {
+    .heading { display: none; }
+    .row {
+        display: block;
+        width: auto;
+
+        & > * {
+            display: block !important;
+            width: auto !important;
+        }
+    }
+
+    .flow {
+        width: auto;
+
+        & > * {
+            width: auto !important;
+        }
+    }
+
+    //div-tables
+    .div-table {
+        display: block;
+
+        .heading {
+            display: none;
+        }
+
+        .row-table {
+            display: block;
+
+            & > * {
+                display: block;
+                padding: .5em;
+                width: auto !important;
+                text-align: left !important;
+            }
+
+            select { width: 100%; }
+
+            .hidden-label { display: inline !important; }
+        }
+    }
+
+    .row-table {
+      select { width: 10em; }
+
+      .hidden-label { display: none !important; }
+    }
+}
+
+/* ===== Responsive Styles / Mobile Screen max-width: 480px ========================================================
+   Author: Andrew Vlasov
+   ========================================================================== */
+@media (max-width: 480px) {
+  //flow
+  .flow {
+      margin-left: 0;
+      & > * {
+        width: auto !important;
+        float: none;
+        margin-left: 0;
+      }
+  }
+}

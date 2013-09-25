@@ -1,0 +1,256 @@
+$link                          : #08D;
+
+
+//text
+$text-dark                     : #444444;
+$text-middle                   : #777777;
+$text-light                    : #999999;
+
+//bg
+$bg                            : #F9F9F9;
+$server-bg                     : #EEEEEE;
+$ticket-bg                     : #EEEEEE;
+$alert-bg                      : #F5F5F5;
+
+$border                        : #DDDDDD;
+$border-white                  : #FFFFFF;
+$border-dark                   : #D5D5D5;
+
+$btn-border                    : #AAAAAA;
+$btn-bg-light                  : #F5F5F5;
+$btn-bg-dark                   : #E7E7E7;
+
+$btn-primary-border            : #027ED6;
+$btn-bg-primary-light          : #58C5FF;
+$btn-bg-primary-dark           : #1DA5FF;
+
+$btn-info-border               : #11B1B8;
+$btn-bg-info-light             : #2FD2E0;
+$btn-bg-info-dark              : #11B1B8;
+
+$btn-success-border            : #21A920;
+$btn-bg-success-light          : #78D677;
+$btn-bg-success-dark           : #37A835;
+
+$btn-warning-border            : #CD7B00;
+$btn-bg-warning-light          : #FFB444;
+$btn-bg-warning-dark           : #FA9200;
+
+$btn-danger-border             : #C40D00;
+$btn-bg-danger-light           : #FF5555;
+$btn-bg-danger-dark            : #DD0000;
+
+$btn-border-radius             : 3px;
+
+//Cloud
+$vm-gradient-light             : #f5f5f5;
+$vm-gradient-dark              : #E7E7E7;
+$vm-active-gradient-light      : #D6D6D6;
+$vm-active-gradient-dark       : #D0D0D0;
+$vm-border-light               : #CCCCCC;
+$vm-border-dark                : #AAAAAA;
+$btn-success-light             : #76C975;
+$btn-success-dark              : #6AB469;
+/* ===== Import ====================================================== */
+@import "base";
+@import "cell";
+
+/* ===== General Styles ========================================================
+   Author: Andrew Vlasov
+   ========================================================================== */
+body, html {
+    background: $bg;  // reset default browser body bg & font color
+    color: $text;
+    font-size: 12px;
+    font-family: Helvetica, Arial, Tahoma, sans-serif;
+    line-height: 150%;
+    margin: 0;
+    height: 100%;
+    min-height: 100%; 
+    padding: 0;
+}
+
+h1 { font-size: 2.2em; line-height: 1;  }
+h2 { font-size: 1.8em; line-height: 1.2; }
+h3 { font-size: 1.6em; line-height: 1.3; }
+h4 { font-size: 1.4em; line-height: 1.4; }
+
+h1,h2,h3,h4,h5 { font-weight: normal; }
+
+.header {
+    position: fixed;
+    background-color: #222;
+    @include background-image(linear-gradient(#222, #111));
+    @include box-shadow(0 -5px 20px rgba(0, 0, 0, 0.6));
+    border-top: 1px solid #333;
+    z-index: 10;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: .9em 0;
+    min-height: 30px;
+}
+
+.logo {
+    @include background-size(100% 100%);
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAqCAMAAADBCuQlAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADBQTFRF////v8DIf4CQQEFZ7+/xEBIwn6CsYGF139/jICI+z8/VMDJMUFFnj5Cer7C6AAIi9wc0OwAAABB0Uk5T////////////////////AOAjXRkAAAObSURBVHja3JnZouogDEUhzNDh///2Vi2UkEDr9fhQeaxMi8DOoFj/osHePpxG7e36CFcWFvU8MMtnA3DKvLMDsbcPQd6fRpYRZZBaRNPkAul2IEEKrsm7gSQtfgIkdDhuByLFb4Ao8SMgtmxcy6cqL5sE+xuC+IzhWgd1M/nN493puGmW8WkpiV0Mt4O0GfbxzcvZcd51gpfZN+tbcGial7d2yFe/Fo4SpnOQk9DAABI370YgLqLHZsNwrn1k54Ea8PV3DeYji0xEo2PqgRiqgygOU2SuAUjybWefxiA+jMIzRtR04kGCZzrb4Vx9EG5hMbEgmjNaaw9Wnr3hQExkOxeDc3LfBeGDDh3G8rud28Ry9Hz/zIHMfF+9Uxv9DogfejgMEvB6HMvBGmeA+TjyQEGOA9fLJj5SN88ExBsgR2dvt4WPt6e4EKWdmrAUVL0rW4poc2g7JR+wLxOYfAq+MciSk56w51KMiufOet9RiOjJtdGvpfdgrl/+TBQ6IRPXOzBln0QkEzo1e8EhOiJ6+Rw8n49w11oePi8fQ1zJJ7KDsnYiSuHqgdpcAFmQMdGhGz5DVNyjysdgGGdgeyD5B125jWq46RuEAdHEusWiqpPqrs53tb883wVKk/V89Q7yifujr61A1MD9EpDyNmVnYQ5kQ+n5YxD9RkAGfaGeS10AUWcL8yDbCYDnHM9XQMI3QR5yZDUxyVdA1i+DPK5YVRmKdwbZrphFLveWVyu7QLm3UC8eJWmpB+JpX3fy2HM/CtJb+BwEp7xnqVcNIvt+Yj2RX5rLtWH7hZLppWTaXQCxNApg92avLOxxlP0fIAFVxuNJeagGmWiIgtogRKHVeEtDlPdAjvwDe0R3DlKi28hnaSC6pyzqMArnc/YKCDxKGY/o43kcRqnp8CWxDb2Pc05qcpzcWKY8sU0Koblb1VwGh/HWkLslpKpvC/RAhoqJu+inZnh01RBInae9BAYrxdxNrI58bVMpLZqM/bVwRAp9GSTnxsYPS6rYAcBA+Iep7sx869Sl3wWBNpG6ArLGIUi/+BC4b/ovQMYlnC4IX0ZRp+WgZifroIzyHogdF9W6IKtZhiBMsY8UOY5vKX4I4hs/bkhmL103tZvaR+VR1dTMmt3YWpdSu/VVEWfejyQHsk1ELBOOGLf4rCAW1LiIrUrtZpP2KdC57F4oev6NXFWFZV4Ada4XNmOHmFT+1xpUWO/WxPoj7Z8AAwATegvzOMSaggAAAABJRU5ErkJggg==');
+    width: 100px;
+    height: 21px;
+    position: absolute;
+    left: 2em;
+    margin-top: 0.2em;
+}
+
+.count {
+    position: absolute;
+    right: 2em;
+    line-height: 2.4;
+}
+
+.wrapper {
+    max-width: 104em;
+    margin: 0 auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 1em;
+    // text-align: center;
+}
+
+.btn-fullscreen {
+    @include transition-property(opacity);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease-in);
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    opacity: .2;
+    z-index: 100;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    outline: none;
+    @include box-shadow(0 1px 0px #FFFFFF);
+    @include transition-property(border);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease-in);
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: #5ca9e4;
+    @include box-shadow(0 0 0 2px rgba(70, 161, 231, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2) inset);
+}
+
+.footer, .content {
+    padding: 0 1em;
+    margin: 0 auto;
+    max-width: 960px;
+}
+.content {
+    padding-top: 5%;
+    padding-bottom: 2em;
+}
+.desc {
+    margin-bottom: 2em;
+    color: whiteSmoke;
+}
+.access {
+    margin: 1em 0;
+
+    input {
+        @include box-sizing(border-box);
+        @include border-radius(4px);
+        width: 100%;
+        border: 1px solid #CCC;
+        padding: .5em;
+        font-size: 2em;
+        line-height: 1.5;
+        height: 2.5em;
+
+        &.error {
+            border-color: #E45C5C;
+            @include box-shadow(0 0 0 2px rgba(231, 70, 70, 0.3), inset 0 3px 5px rgba(0, 0, 0, 0.1));
+        }
+    }
+    .cell {
+        width: 77%;
+    }
+    .btn {
+        padding: .5em;
+        font-size: 2em;
+        height: 2.5em;
+    }
+}
+.share {
+    width: auto;
+    border-radius: .6em;
+    padding: 0;
+    position: absolute;
+    right: 1.6em;
+    bottom: 5em;
+    text-align: center;
+    z-index: 9999 !important;
+
+    display: none;
+
+    a {
+        display: block;
+        margin: .2em;
+        margin-bottom: .4em;
+    }
+
+    span {
+        opacity: 1;
+    }
+}
+@media (max-width: 768px) {
+    .share { right: .5em; }
+
+    .share a {
+        display: inline-block;
+    }
+    .btn-fullscreen {
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+    .share {
+        right: 0;
+        left: 0;
+    }
+}
+
+@import "sendmefile-particaly"

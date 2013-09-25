@@ -17,14 +17,13 @@ Features:
 
 ## Build
 
-*You must have nodejs version >1.2 and compass*
-
 ```
 npm install
-PATH=$(npm bin):$PATH make
+grunt build:access
+grunt build:gallery
 ```
 
-_./index.min.html_ is result index file with all resources.
+/dist/*.html are results files with all resources.
 
 ## Authors
 

@@ -6,4 +6,3 @@ node_js:
   - "0.6"
 before_install:
   - gem install compass
-script: PATH=$(npm bin):/usr/local/bin/:$PATH make

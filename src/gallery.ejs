@@ -11,7 +11,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
 </head>
 <body>
-  <style type="text/css"><%- fs.readFileSync('./style.min.css') %></style>
+  <style type="text/css"><%- fs.readFileSync('.temp/css/style.css') %></style>
   <div class="header">
     <a href="#" class="logo"></a>
     <div class="count"></div>
@@ -58,5 +58,5 @@
   </div>
   <!-- end .wrapper-->
 </body>
-  <script><%- fs.readFileSync('./js/gallery.min.js') %></script>
+  <script><%- fs.readFileSync('.temp/js/gallery.js') %></script>
 </html>

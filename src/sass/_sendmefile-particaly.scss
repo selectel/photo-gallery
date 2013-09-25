@@ -1,0 +1,93 @@
+.page_footer {
+  color: red;
+  text-align: center;
+}
+
+.btn {
+    @include border-radius(4px);
+    font-size: 1em;
+    padding: .5em 1em;
+    display: inline-block;
+    border: 1px solid #D4D4D4;
+    border-bottom-color: #BBB;
+    background: #EAEAEA;
+    @include background-image(linear-gradient(#F6F6F6, #EAEAEA));
+    @include box-shadow(0 2px 0 rgba(255, 255, 255, 0.85) inset,
+     0 0 10px rgba(0, 0, 0, 0.08) inset,
+     0 1px 1px rgba(0, 0, 0, 0.05),
+     0 7px 4px -4px rgba(0, 0, 0, 0.08));
+    @include transition(box-shadow 50ms linear, border 100ms linear);
+    color: #666;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+}
+
+.btn:hover {
+    background: #F8F8F8;
+    border: 1px solid #D4D4D4;
+    border-bottom-color: #BBB;
+    @include box-shadow(0 2px 0 rgba(255, 255, 255, 0.85) inset,
+     0 0 10px rgba(0, 0, 0, 0.08) inset,
+     0 1px 1px rgba(0, 0, 0, 0.05),
+     0 7px 4px -4px rgba(0, 0, 0, 0.15));
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.btn:active, .btn.active, .btn.disabled, .btn:disabled {
+    background: #F8F8F8;
+    border: 1px solid #D4D4D4;
+    border-bottom-color: #D4D4D4;
+    @include box-shadow(0 2px 0 rgba(255, 255, 255, 0.5) inset,
+     0 0 10px rgba(0, 0, 0, 0.05) inset,
+     0 1px 0 rgba(255, 255, 255, 1));
+}
+.footer, .desc, .files, .drag-desc {
+    padding: 0 1em;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.content {
+    padding-top: 5%;
+    padding-bottom: 2em;
+}
+.desc {
+    margin-bottom: 2em;
+}
+
+.footer {
+    color: #AAA;
+    font-size: .9em;
+    text-align: center;
+}
+
+.mobile-text { display: none; }
+
+/* ===== Responsive Styles / Landscape phone to portrait tablet ========================================================
+   Author: Andrew Vlasov
+   ========================================================================== */
+@media (max-width: 767px) {
+    body { -webkit-text-size-adjust:none; }
+    h1 { font-size: 1.6em; }
+    .hidden-label { display: inline !important; }
+    .mobile-text { display: inline !important; }
+    .remove {
+        .icon-remove { margin-right: .3em; }
+    }
+    .drag-title, .drag-or {
+        display: none !important;
+    }
+}
+@media (max-width: 480px) {
+    .wrapper {
+        min-height: auto;
+    }
+    .content {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .footer {
+        height: auto;
+        padding: 1em;
+    }
+}
