@@ -24,6 +24,7 @@ grunt build:gallery
 ```
 
 /dist/*.html are results files with all resources.
+Node.js >= 0.8 required
 
 ## Authors
 
