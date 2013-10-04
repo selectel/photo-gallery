@@ -14,3 +14,5 @@ img/icon-*
 !/img/icon-retina
 img/social-*
 node_modules
+.temp
+dist

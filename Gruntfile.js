@@ -71,4 +71,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('build:access', ['coffee:access', 'compass', 'uglify:access', 'ejs:access']);
 	grunt.registerTask('build:gallery', ['coffee:gallery', 'compass', 'uglify:gallery', 'concat:gallery', 'ejs:gallery']);
+	grunt.registerTask('build', ['build:gallery', 'build:access']);
 }
