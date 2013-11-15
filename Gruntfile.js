@@ -55,10 +55,10 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			gallery: {
-				files: { '.temp/js/gallery.js': ['src/js/vendor/*'] }
+				files: { '.temp/js/gallery.js': ['src/js/vendor/*', '.temp/js/gallery.js'] }
 			},
 			access: {
-				files: {'.temp/js/access.js': ['.temp/js/access.js']},
+				files: {'.temp/js/access.js': ['.temp/js/access.js', '.temp/js/access.js']},
 			},
 		}
 	});
