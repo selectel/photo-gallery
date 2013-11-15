@@ -55,10 +55,10 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			gallery: {
-				files: { '.temp/js/gallery.js': ['src/js/vendor/*', '.temp/js/gallery.js'] }
+				files: { '.temp/js/gallery.js': ['.temp/js/gallery.js'] }
 			},
 			access: {
-				files: {'.temp/js/access.js': ['.temp/js/access.js', '.temp/js/access.js']},
+				files: {'.temp/js/access.js': ['.temp/js/access.js']},
 			},
 		}
 	});
@@ -70,6 +70,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-ejs');
 
 	grunt.registerTask('build:access', ['coffee:access', 'compass', 'uglify:access', 'ejs:access']);
-	grunt.registerTask('build:gallery', ['coffee:gallery', 'compass', 'uglify:gallery', 'concat:gallery', 'ejs:gallery']);
+	grunt.registerTask('build:gallery', ['coffee:gallery', 'compass', 'concat:gallery', 'uglify:gallery', 'ejs:gallery']);
 	grunt.registerTask('build', ['build:gallery', 'build:access']);
 }
