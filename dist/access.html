@@ -20,7 +20,7 @@
   <div class="wrapper">
     <div class="content">
       <div class="desc">
-        <h1>Доступ к хранилищу защищен паролем</h1>
+        <h1>Доступ к галерее защищен паролем</h1>
       </div>
       <form class="access">
         <div class="flow">
@@ -70,5 +70,5 @@
   </div>
   <!-- end .wrapper-->
 </body>
-  <script>(function(){var a,b;b=function(a){return document.querySelector(a)},a=!0,a||(b(".page_footer.error").innerHTML="Пароль неверный."),b(".access").addEventListener("submit",function(a){var c,d;return c=a.target,a.preventDefault(),d=c[0].value.toString(),d&&/^[\d\w\s]{5,}$/.test(d)?(document.cookie='gallery-secret="'+c[0].value.toString()+'";',c.submit()):b(".page_footer.error").innerHTML="Пароль должен содержать хотя бы 5 букв и цифр."})}).call(this);</script>
+  <script>(function(){var a,b;b=function(a){return document.querySelector(a)},a=!0,a||(b(".page_footer.error").innerHTML="Пароль неверный."),b(".access").addEventListener("submit",function(a){var c,d;return c=a.target,a.preventDefault(),d=c[0].value.toString(),d&&d.length>4?(document.cookie='gallery-secret="'+c[0].value.toString()+'";',c.submit()):b(".page_footer.error").innerHTML="Пароль должен содержать хотя бы 5 букв и цифр."})}).call(this);</script>
 </html>

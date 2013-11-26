@@ -8,7 +8,7 @@ ge('.access').addEventListener 'submit', (e) ->
 	form = e.target
 	e.preventDefault()
 	val = form[0].value.toString()
-	if val and /^[\d\w\s]{5,}$/.test(val)
+	if val and val.length > 4
 		document.cookie = 'gallery-secret="' + form[0].value.toString() + '";'
 		form.submit()
 	else 
