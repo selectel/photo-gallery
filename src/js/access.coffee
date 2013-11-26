@@ -12,4 +12,4 @@ ge('.access').addEventListener 'submit', (e) ->
 		document.cookie = 'gallery-secret="' + form[0].value.toString() + '";'
 		form.submit()
 	else 
-		ge('.page_footer.error').innerHTML = 'Пароль должен содержать хотя бы 5 букв и цифр.'
+		ge('.page_footer.error').innerHTML = 'Пароль должен содержать минимум 5 символов.'
